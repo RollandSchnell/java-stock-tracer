@@ -6,4 +6,4 @@ The API uses the as external stock provider open source https://www.alphavantage
 
 In order to access application resource endpoints create a user, authenticate and use the received JWT access token in future requests in the Authorization header as: Bearer <token>
   
-# to run the project -> mvn install -> mvn spring-boot:run
+## to run the project -> mvn install -> mvn spring-boot:run
