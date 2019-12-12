@@ -1,6 +1,7 @@
 package com.stock.app.dao;
 
-import com.stock.app.model.User;
+import com.stock.app.exceptions.UserNotFoundException;
+import com.stock.app.model.UserEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,9 +10,9 @@ import java.util.List;
 
 @Repository
 @Transactional
-public interface UserDAO extends CrudRepository<User, Long> {
+public interface UserDAO extends CrudRepository<UserEntity, Long> {
 
-    User getUserByEmail(String email);
+    UserEntity getUserEntitiesByEmail(String email) throws UserNotFoundException;
 
-    List<User> findAll();
+    List<UserEntity> findAll();
 }

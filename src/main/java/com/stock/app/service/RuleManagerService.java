@@ -1,18 +1,20 @@
 package com.stock.app.service;
 
 import com.stock.app.exceptions.RuleAlreadyExistsException;
-import com.stock.app.model.Rule;
+import com.stock.app.exceptions.RuleNotFoundException;
+import com.stock.app.exceptions.UserNotFoundException;
+import com.stock.app.model.RuleEntity;
 
 import java.util.List;
 
 public interface RuleManagerService {
 
-    void createNewRule(Rule rule, String email) throws RuleAlreadyExistsException;
+    void createNewRule(RuleEntity ruleEntity, String email) throws RuleAlreadyExistsException, UserNotFoundException;
 
-    List<Rule> getRulesByUser(String email) throws Exception;
+    List<RuleEntity> getRulesByUser(String email) throws UserNotFoundException, Exception;
 
-    Rule updateRuleByUserEmailAndRule(Rule rule, String email) throws RuleAlreadyExistsException;
+    List<RuleEntity> getAllRules() throws Exception;
 
-    boolean deleteRuleByRuleId(Long ruleId);
+    RuleEntity updateUserRule(RuleEntity ruleEntity, String email) throws UserNotFoundException, RuleNotFoundException, Exception;
 
 }

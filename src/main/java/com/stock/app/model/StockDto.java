@@ -1,6 +1,6 @@
 package com.stock.app.model;
 
-public class Stock {
+public class StockDto {
 
     private String symbol;
 
@@ -14,9 +14,9 @@ public class Stock {
 
     private double price;
 
-    public Stock() {}
+    public StockDto() {}
 
-    public Stock(String symbol, double low, double high, double open, double change, double price) {
+    public StockDto(String symbol, double low, double high, double open, double change, double price) {
         this.symbol = symbol;
         this.low = low;
         this.high = high;

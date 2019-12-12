@@ -1,8 +1,8 @@
 package com.stock.app.service;
 
-import com.stock.app.model.Stock;
+import com.stock.app.model.StockDto;
 
 public interface StockManagerService {
 
-    Stock getStock(String Symbol) throws Exception;
+    StockDto getStock(String Symbol) throws Exception;
 }

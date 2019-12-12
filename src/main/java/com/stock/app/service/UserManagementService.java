@@ -2,17 +2,17 @@ package com.stock.app.service;
 
 import com.stock.app.exceptions.UserAlreadyExistsException;
 import com.stock.app.exceptions.UserNotFoundException;
-import com.stock.app.model.User;
+import com.stock.app.model.UserEntity;
 
 import java.util.List;
 
 public interface UserManagementService {
 
-    void checkLoginDetails(String email, String password) throws UserNotFoundException;
+    String authenticateUser(String email, String password) throws UserNotFoundException;
 
-    void registerNewUser(User user) throws UserAlreadyExistsException;
+    UserEntity registerNewUser(UserEntity userEntity) throws UserAlreadyExistsException;
 
-    List<User> getAllUsers() throws Exception;
+    List<UserEntity> getAllUsers() throws Exception;
 
-    User updateUser(User user) throws UserNotFoundException;
+    UserEntity updateUser(UserEntity userEntity) throws UserNotFoundException;
 }

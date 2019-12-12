@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "RULE")
-public class Rule {
+public class RuleEntity {
     @Id
     @GeneratedValue
     private Long id;
@@ -17,13 +17,11 @@ public class Rule {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private UserEntity userEntity;
 
-    public Rule () {
+    public RuleEntity() { }
 
-    }
-
-    public Rule(Long id, String stockName, Double minStockValue, String email) {
+    public RuleEntity(Long id, String stockName, Double minStockValue, String email) {
         this.id = id;
         this.stockName = stockName;
         this.minStockValue = minStockValue;
@@ -53,17 +51,17 @@ public class Rule {
         this.minStockValue = minStockValue;
     }
 
-    public User getUser() {
-        return user;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
     @Override
     public String toString() {
-        return String.format("Rule[ID: %d, stockName: %s, minValue: %s]", id, stockName, minStockValue);
+        return "id " + this.id + " stockName " + this.stockName + " minStockValue " + this.minStockValue;
     }
 
 }

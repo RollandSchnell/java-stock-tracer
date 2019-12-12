@@ -1,12 +1,10 @@
 package com.stock.app.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table(name = "USER")
-public class User {
+public class UserEntity {
     @Id
     @GeneratedValue
     private Long id;
@@ -23,9 +21,9 @@ public class User {
     @Column(name = "Password")
     private String password;
 
-    public User() {}
+    public UserEntity() {}
 
-    public User(String firstName, String lastName, String email, String password) {
+    public UserEntity(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -67,20 +65,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    /*public List<Rule> getRules() {
-        if (this.rules == null) {
-                  this.rules = new ArrayList<>();
-        }
-
-        return this.rules;
-    }
-
-    public void setRules(List<Rule> rules) {this.rules = rules;}
-
-    public void addRule(Rule rule) {
-        this.rules.add(rule);
-    }*/
 
     @Override
     public String toString() {
